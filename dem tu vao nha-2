@@ -1,0 +1,22 @@
+#include <algorithm>
+#include <iostream>
+using namespace std;
+
+bool lotkhe(int l1, int l2, int k1, int k2) {
+  int x1 = min(l1, l2);
+  int x2 = max(l1, l2);
+  int y1 = min(k1, k2);
+  int y2 = max(k1, k2);
+  return (x1 <= y1 && x2 <= y2);
+}
+
+int main() {
+  int a, b, c, x, y;
+  cin >> a >> b >>c>> x >> y;
+  if (lotkhe(a, b, x, y) || lotkhe(a, c, x, y) || lotkhe(c, b, x, y)) {
+    cout << "Yes";
+  } else {
+    cout << "No";
+  }
+  return 0;
+}
